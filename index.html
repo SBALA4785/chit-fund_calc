@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chit Fund Calculator - Analyze Interest Rates & Returns</title>
+    <meta name="description" content="Calculate interest rates and analyze loan vs RD scenarios for your chit fund investments">
+    <link rel="stylesheet" href="css/styles.css">
+    <!--<link rel="icon" type="image/x-icon" href="assets/favicon.ico"> -->
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏦 Chit Fund Calculator</h1>
+            <p>Calculate interest rates and analyze loan vs RD scenarios for your chit fund</p>
+        </div>
+
+        <div class="form-section">
+            <h2>Fund Details</h2>
+            <div class="input-group">
+                <div class="form-field">
+                    <label for="fundName">Fund Name</label>
+                    <input type="text" id="fundName" placeholder="Enter fund name">
+                </div>
+                <div class="form-field">
+                    <label for="totalValue">Total Fund Value (₹)</label>
+                    <input type="number" id="totalValue" placeholder="e.g., 200000">
+                </div>
+                <div class="form-field">
+                    <label for="numInstallments">Number of Members</label>
+                    <input type="number" id="numInstallments" placeholder="e.g., 20">
+                </div>
+                <div class="form-field">
+                    <label for="installmentType">Installment Type</label>
+                    <select id="installmentType">
+                        <option value="monthly">Monthly</option>
+                        <option value="weekly">Weekly</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="generateAuctionTable()">Generate Auction Table</button>
+        </div>
+
+        <div class="auction-section" id="auctionSection">
+            <h2>Auction Values</h2>
+            <p>Enter the auction value for each month (Month 2 is for organizer - no auction)</p>
+            <div id="auctionTableContainer"></div>
+            <button class="btn" onclick="calculateResults()">Calculate Interest Rates</button>
+        </div>
+
+        <div class="results-section" id="resultsSection">
+            <h2>Results & Analysis</h2>
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <h3>Monthly Installment</h3>
+                    <div class="value" id="monthlyInstallment">₹0</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Total Duration</h3>
+                    <div class="value" id="totalDuration">0 months</div>
+                </div>
+                <div class="summary-card">
+                    <h3>Total Members</h3>
+                    <div class="value" id="totalMembers">0</div>
+                </div>
+            </div>
+            <div id="resultsTableContainer"></div>
+        </div>
+    </div>
+
+    <script src="js/calculator.js"></script>
+</body>
+</html>
